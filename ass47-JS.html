@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div id="main-div">
+
+        <table>
+            <tr>
+                <td> Name:</td>
+                <td><input type="text" id="name" ></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td > <input type="radio" name="gender" value="male"  > Male
+                <input type="radio" name="gender" value="female"  > Female</td>
+            </tr>
+
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" id="address" ></td>
+            </tr>
+
+            <tr>
+                <td>Education:</td>
+                <td><select id="education" >
+                    <option>Matric  </option>
+                    <option>Inter   </option>
+                    <option>Bachelors   </option>
+                    <option>Masters</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td>Profession:</td>
+                <td><select id="profession" >
+                    <option>Manager</option>
+                    <option>Accountant</option>
+                    <option>Driver</option>
+                    <option>Front Desk</option>
+                </select>
+            </td>
+                
+
+            </tr>
+
+            <tr>
+               
+                <td><input id="button" type="submit" value="submit" onclick="call()"></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <script>
+
+
+        
+
+        
+        function call(){
+        var name1 = document.getElementById("name").value;
+
+         var gender1 = document.getElementsByName("gender")[0].checked ;
+         if (gender1===true){
+             gender1="male"
+         }
+         else{
+             gender1= "female"
+         }
+        // var gender1 = document("gender")[0].checked ;
+        // console.log(gender1);
+                   
+        var address1 = document.getElementById("address").value;
+
+        var education1 = document.getElementById("education").value;
+    
+        var profession1 = document.getElementById("profession").value;
+
+        
+        
+
+        function Submit(name1, gender1, address1, education1, profession1) {
+            this.name = name1;
+            this.gender = gender1;
+            this.address = address1;
+            this.education = education1;
+            this.profession = profession1;
+        }
+
+        var data = new Submit(name1, gender1, address1, education1, profession1);
+        
+
+        localStorage.setItem("data" , JSON.stringify(data));
+
+
+
+    }
+    
+
+    </script>
+</body>
+
+</html>
